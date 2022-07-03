@@ -71,8 +71,8 @@ def promocion(request):
 
 def modificarPromocion(request, id):
 
-    Promocion = Promocion.objects.get(codigo=id)
-    datos = {"form":PromocionForm(instance=Promocion)}
+    promocion = Promocion.objects.get(codigo=id)
+    datos = {"form":PromocionForm(instance=promocion)}
     if request.method == "POST":
         form = PromocionForm(request.POST, instance=Promocion)
         if form.is_valid:
@@ -83,9 +83,9 @@ def modificarPromocion(request, id):
 
 
 def eliminarPromocion(request, id):
-    Promocion = Promocion.objects.get(codigo=id)
+    promocion = Promocion.objects.get(codigo=id)
 
-    Promocion.delete()
+    promocion.delete()
 
     return redirect(to="home")
     

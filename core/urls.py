@@ -20,5 +20,7 @@ urlpatterns = [
     path('eliminarProducto/<id>', eliminarProducto, name="eliminarProducto"),
     path('login', LoginView.as_view(template_name='core/login.html'), name="login"),
     path('logout', LogoutView.as_view(template_name='core/logout.html'), name="logout"),
+    path('modificarPromocion/<id>', modificarPromocion, name="modificarPromocion"),
+    path('eliminarPromocion/<id>', eliminarPromocion, name="eliminarPromocion"),
   # path('', promocion, name="promocion"),
 ]
